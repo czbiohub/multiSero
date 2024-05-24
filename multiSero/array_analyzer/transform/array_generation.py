@@ -2,10 +2,10 @@ import itertools
 import numpy as np
 import pandas as pd
 
-import array_analyzer.extract.constants as constants
-import array_analyzer.extract.img_processing as img_processing
-import array_analyzer.extract.txt_parser as txt_parser
-import array_analyzer.utils.spot_regionprop as regionprop
+import multiSero.array_analyzer.extract.constants as constants
+import multiSero.array_analyzer.extract.img_processing as img_processing
+import multiSero.array_analyzer.extract.txt_parser as txt_parser
+import multiSero.array_analyzer.utils.spot_regionprop as regionprop
 
 
 def build_centroid_binary_blocks(cent_list, image_, params_, return_type='region'):
@@ -59,7 +59,7 @@ def build_centroid_binary_blocks(cent_list, image_, params_, return_type='region
         return target
 
 
-def get_spot_intensity(coords, im, background, search_range=3):
+def get_spot_intensity(coords, im, background, search_range=2):
     """
     Extract signal and background intensity at each spot given the spot coordinate
     with the following steps:

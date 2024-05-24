@@ -22,9 +22,9 @@ import os
 import pandas as pd
 import unicodedata
 import xgboost as xgb
-import array_analyzer.utils.io_utils as io_utils
-from interpretation.plotting import get_roc_df, roc_plot_grid, thr_plot_grid
-from interpretation.report_reader import slice_df, normalize_od, offset_od
+import multiSero.array_analyzer.utils.io_utils as io_utils
+from multiSero.plotting.plotting import get_roc_df, roc_plot_grid, thr_plot_grid
+from multiSero.interpretation.report_reader import slice_df, normalize_od, offset_od
 from sklearn import metrics
 from sklearn.model_selection import GridSearchCV, GroupKFold, GroupShuffleSplit
 from sklearn.linear_model import LogisticRegressionCV

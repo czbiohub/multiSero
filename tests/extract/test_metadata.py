@@ -1,7 +1,7 @@
 import pytest
 
-from array_analyzer.extract.metadata import MetaData
-import array_analyzer.extract.constants as constants
+from multiSero.array_analyzer.extract.metadata import MetaData
+import multiSero.array_analyzer.extract.constants as constants
 
 """
 Tests to add:

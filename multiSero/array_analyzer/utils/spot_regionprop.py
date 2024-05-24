@@ -3,7 +3,7 @@ import pandas as pd
 from skimage import measure
 from skimage.morphology import disk
 
-import array_analyzer.extract.constants as constants
+import multiSero.array_analyzer.extract.constants as constants
 
 
 class SpotRegionprop:

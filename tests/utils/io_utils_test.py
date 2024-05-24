@@ -1,7 +1,7 @@
 import numpy as np
 import os
 import pytest
-import array_analyzer.utils.io_utils as io_utils
+import multiSero.array_analyzer.utils.io_utils as io_utils
 
 
 def test_read_gray_im(image_dir):

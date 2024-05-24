@@ -2,12 +2,12 @@ import argparse
 import logging
 import os
 
-import array_analyzer.extract.constants as constants
-import array_analyzer.utils.io_utils as io_utils
-import array_analyzer.workflows.registration_workflow as registration_wf
-import array_analyzer.workflows.interpolation_wf as interpolation_wf
-import array_analyzer.workflows.well_wf as well_wf
-import interpretation.od_analyzer as od_analyzer
+import multiSero.array_analyzer.extract.constants as constants
+import multiSero.array_analyzer.utils.io_utils as io_utils
+import multiSero.array_analyzer.workflows.registration_workflow as registration_wf
+from multiSero import array_analyzer as interpolation_wf
+import multiSero.array_analyzer.workflows.well_wf as well_wf
+import multiSero.interpretation.od_analyzer as od_analyzer
 import matplotlib
 matplotlib.use('Agg')
 

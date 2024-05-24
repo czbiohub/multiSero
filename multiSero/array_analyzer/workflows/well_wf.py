@@ -1,15 +1,14 @@
-import array_analyzer.extract.image_parser as image_parser
-import array_analyzer.extract.img_processing as processing
-import array_analyzer.extract.constants as constants
-from array_analyzer.extract.metadata import MetaData
-import array_analyzer.utils.io_utils as io_utils
+import multiSero.array_analyzer.extract.image_parser as image_parser
+import multiSero.array_analyzer.extract.img_processing as processing
+import multiSero.array_analyzer.extract.constants as constants
+from multiSero.array_analyzer.extract.metadata import MetaData
+import multiSero.array_analyzer.utils.io_utils as io_utils
 
 import time
 import skimage.io as io
 import pandas as pd
 import string
 import os
-import re
 import numpy as np
 
 

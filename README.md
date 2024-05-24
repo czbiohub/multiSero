@@ -15,7 +15,7 @@ On a typical Windows, Mac, or Linux computer:
 * Create a conda environment: `conda create --name multisero python=3.7`
 * Activate conda environment: `conda activate multisero`
 * Pip install dependencies: `pip install -r requirements.txt`
-* Add the package to PYTHONPATH. Inside the package directory (...\serology-COVID19), do: `export PYTHONPATH=$PYTHONPATH:$(pwd)` 
+* If operating from CLI, add the package to PYTHONPATH by navigating to package directory (eg: ...\serology-COVID19), and type `export PYTHONPATH=$PYTHONPATH:$(pwd)`
 
 For installation notes for Jetson Nano, see [these notes](docs/installation.md).
 
@@ -47,10 +47,12 @@ optional arguments:
   -m METADATA, --metadata METADATA
                         specify the file name for the experiment metadata.
                         Assumed to be in the same directory as images.
-                        Default: 'multisero_output_data_metadata.xlsx'
+                        Default: 'multisero_output_data_metadata.xlsx', therefore
+                        metadata flag is NOT necessary when running in -e mode IF
+                        metadata file has the default filename.
 ```
 ### Extract OD from antigen array images
-`python multisero.py -e -i <input> -o <output> -m <METADATA>` will take metadata for antigen array and images as input, and output optical densities for each antigen.
+`python multisero.py -e -i <input> -o <output>` will take metadata for antigen array and images as input, and output optical densities for each antigen.
 The optical densities are stored in an excel file at the following path: `<output>/multisero_<input>_<year><month><day>_<hour><min>/median_ODs.xlsx`
 
 If rerunning some of the wells, the input metadata file needs to contain a sheet named 'rerun_wells'

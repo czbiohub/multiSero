@@ -9,8 +9,6 @@ import xml.etree.ElementTree as ET
 import pandas as pd
 import math
 
-import array_analyzer.extract.constants as constants
-
 """
 functions like "create_<extension>_dict" parse files of <extension> and return:
 fiduc: list of dict describing fiducial positions

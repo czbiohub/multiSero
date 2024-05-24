@@ -2,7 +2,7 @@ import os
 import numpy as np
 import pandas as pd
 import logging
-import array_analyzer.extract.constants as constants
+import multiSero.array_analyzer.extract.constants as constants
 
 def antigen2D_to_df1D(xlsx_path, sheet, data_col):
     """
@@ -47,7 +47,7 @@ def read_plate_info(metadata_xlsx):
                    'serum cat',
                    'secondary ID',
                    'secondary dilution',
-                   'PRNT',
+                   'visit value',
                    'sample type']
     plate_info_df = pd.DataFrame()
     # get sheet names that are available in metadata

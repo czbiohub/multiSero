@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 
-import array_analyzer.extract.constants as constants
-import array_analyzer.transform.point_registration as registration
+import multiSero.array_analyzer.extract.constants as constants
+import multiSero.array_analyzer.transform.point_registration as registration
 
 
 @pytest.fixture

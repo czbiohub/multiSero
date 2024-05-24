@@ -4,8 +4,8 @@ import os
 import pandas as pd
 import pytest
 
-import array_analyzer.extract.constants as constants
-import array_analyzer.load.report as report
+import multiSero.array_analyzer.extract.constants as constants
+import multiSero.array_analyzer.load.report as report
 
 
 @pytest.fixture

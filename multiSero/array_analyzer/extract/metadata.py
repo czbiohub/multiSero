@@ -3,8 +3,8 @@ import numpy as np
 import pandas as pd
 import shutil
 
-import array_analyzer.extract.txt_parser as txt_parser
-import array_analyzer.extract.constants as constants
+import multiSero.array_analyzer.extract.txt_parser as txt_parser
+import multiSero.array_analyzer.extract.constants as constants
 
 
 class MetaData:

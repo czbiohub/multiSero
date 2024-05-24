@@ -12,7 +12,7 @@ from skimage.morphology import binary_closing, binary_dilation, selem, disk, bin
 from skimage import measure
 
 from .img_processing import thresh_and_binarize
-from array_analyzer.transform.point_registration import icp
+from multiSero.array_analyzer.transform.point_registration import icp
 
 """
 method is
@@ -338,7 +338,7 @@ def find_fiducials_markers(props_,
     return cent_map
 
 
-def grid_from_centroids(props_, n_rows, n_cols, grid_spacing=82):
+def grid_from_centroids(props_, n_rows, n_cols, grid_spacing=90):
     """
     based on the region props, creates a dictionary of format:
         key = (centroid_x, centroid_y)

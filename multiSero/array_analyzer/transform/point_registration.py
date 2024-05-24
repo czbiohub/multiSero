@@ -2,7 +2,7 @@ import cv2 as cv
 import logging
 import numpy as np
 
-import array_analyzer.extract.constants as constants
+import multiSero.array_analyzer.extract.constants as constants
 
 
 def icp(source, target, max_iterate=50, matrix_diff=1.):
@@ -166,10 +166,12 @@ class ParticleFilter:
         b = particle[3] * np.sin(particle[2] * np.pi / 180)
         t_matrix = np.array([[a, b, particle[0]],
                             [-b, a, particle[1]]])
+        #t_matrix = np.array([[0, 0, particle[0]],
+                           #[0, 0, particle[1]]])
         return t_matrix
 
     def particle_filter(self,
-                        max_iter=100,
+                        max_iter=1000,
                         stop_criteria=.1,
                         iter_decrease=.8,
                         nbr_outliers=0):
@@ -256,6 +258,7 @@ class ParticleFilter:
         self.registered_dist = min_dist / (self.fiducial_coords.shape[0] - nbr_outliers)
         self.logger.info("Particle filter min dist: {}".format(self.registered_dist))
         if self.registered_dist > constants.REG_DIST_THRESH:
+        #if self.registered_dist > 300:
             self.registration_ok = False
         else:
             self.registration_ok = True

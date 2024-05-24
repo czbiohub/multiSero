@@ -5,7 +5,7 @@ import numpy as np
 import os
 import pandas as pd
 
-import array_analyzer.extract.constants as constants
+import multiSero.array_analyzer.extract.constants as constants
 
 
 class ReportWriter:

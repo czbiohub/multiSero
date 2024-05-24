@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-import array_analyzer.utils.spot_regionprop as regionprop
+import multiSero.array_analyzer.utils.spot_regionprop as regionprop
 
 
 @pytest.fixture
