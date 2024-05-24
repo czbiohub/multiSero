@@ -28,17 +28,20 @@ def fit2df(df, model, serum_group='serum ID'):
     antigens = df['antigen'].unique()
     secondaries = df['secondary ID'].unique()
     plate_ids = df['plate ID'].unique()
-    prnt = df['PRNT'].unique()
 
-    keys = itertools.product(sera, antigens, secondaries, plate_ids, prnt)
+    # keys = itertools.product(sera, antigens, secondaries, plate_ids, prnt)
+    keys = itertools.product(sera, antigens, secondaries, plate_ids)
     df_fit = pd.DataFrame(columns=df.columns)
-    for serum, antigen, secondary, plate_id, prnt in keys:
+    # for serum, antigen, secondary, plate_id, prnt in keys:
+    for serum, antigen, secondary, plate_id in keys:
         print('Fitting {}, {}...'.format(serum, antigen))
+        prnt_sub = df[df['serum ID'] == serum]
+        prnt = prnt_sub['PRNT'].unique()
         sec_dilu_df = df[(df[serum_group] == serum) &
-                        (df['antigen'] == antigen) &
-                        (df['secondary ID'] == secondary) &
+                         (df['antigen'] == antigen) &
+                         (df['secondary ID'] == secondary) &
                          (df['plate ID'] == plate_id) &
-                         (df['PRNT'] == prnt)]
+                         (df['PRNT'] == prnt[0])]
         sec_dilutions = sec_dilu_df['secondary dilution'].unique()
         for sec_dilution in sec_dilutions:
             sub_df = sec_dilu_df[(sec_dilu_df['secondary dilution'] == sec_dilution)].reset_index(drop=True)
